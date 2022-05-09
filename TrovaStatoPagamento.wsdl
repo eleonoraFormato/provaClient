@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ws.prova" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ws.prova" xmlns:intf="http://ws.prova" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ws.prova" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="randomStringa">
+    <complexType/>
+   </element>
+   <element name="randomStringaResponse">
+    <complexType>
+     <sequence>
+      <element name="randomStringaReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="randomInt">
+    <complexType/>
+   </element>
+   <element name="randomIntResponse">
+    <complexType>
+     <sequence>
+      <element name="randomIntReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="trovaStatoPagamento">
+    <complexType/>
+   </element>
+   <element name="trovaStatoPagamentoResponse">
+    <complexType>
+     <sequence>
+      <element name="trovaStatoPagamentoReturn" type="impl:StatoPagamento"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="StatoPagamento">
+    <sequence>
+     <element name="codicePagamento" nillable="true" type="xsd:string"/>
+     <element name="id" type="xsd:int"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="randomStringaRequest">
+
+      <wsdl:part element="impl:randomStringa" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="trovaStatoPagamentoResponse">
+
+      <wsdl:part element="impl:trovaStatoPagamentoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="randomIntRequest">
+
+      <wsdl:part element="impl:randomInt" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="randomStringaResponse">
+
+      <wsdl:part element="impl:randomStringaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="randomIntResponse">
+
+      <wsdl:part element="impl:randomIntResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="trovaStatoPagamentoRequest">
+
+      <wsdl:part element="impl:trovaStatoPagamento" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="TrovaStatoPagamento">
+
+      <wsdl:operation name="randomStringa">
+
+         <wsdl:input message="impl:randomStringaRequest" name="randomStringaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:randomStringaResponse" name="randomStringaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="randomInt">
+
+         <wsdl:input message="impl:randomIntRequest" name="randomIntRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:randomIntResponse" name="randomIntResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="trovaStatoPagamento">
+
+         <wsdl:input message="impl:trovaStatoPagamentoRequest" name="trovaStatoPagamentoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:trovaStatoPagamentoResponse" name="trovaStatoPagamentoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="TrovaStatoPagamentoSoapBinding" type="impl:TrovaStatoPagamento">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="randomStringa">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="randomStringaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="randomStringaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="randomInt">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="randomIntRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="randomIntResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="trovaStatoPagamento">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="trovaStatoPagamentoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="trovaStatoPagamentoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="TrovaStatoPagamentoService">
+
+      <wsdl:port binding="impl:TrovaStatoPagamentoSoapBinding" name="TrovaStatoPagamento">
+
+         <wsdlsoap:address location="http://localhost:8080/prova/services/TrovaStatoPagamento"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
